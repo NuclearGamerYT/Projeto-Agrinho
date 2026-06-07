@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Comparação</title>
+    <link rel="stylesheet" href="style.css">
+     <button onclick="alternarModo()">🌙 Modo Escuro</button>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    
+
+    <nav>
+        <a href="index.html">Começo</a>
+        <a href="praticas.html">Práticas</a>
+        <a href="comparacao.html">Comparação</a>
+        <a href="Perguntas.html">Perguntas</a>
+    </nav>
+
+<h1>Comparação de Impactos</h1>
+
+<div class="container">
+
+    <div class="card bom">
+        <h2>🌱 Sustentável</h2>
+
+        <ul>
+            <li>Preserva florestas</li>
+            <li>Reduz poluição</li>
+            <li>Economiza água</li>
+            <li>Protege animais</li>
+            <li>Melhora qualidade do ar</li>
+        </ul>
+
+        <button onclick="toggleInfo('bom')">Ver mais</button>
+
+        <div id="extra-bom" class="extra">
+            <p>✔ Mantém o equilíbrio ambiental</p>
+            <p>✔ Garante recursos para o futuro</p>
+            <p>✔ Reduz mudanças climáticas</p>
+        </div>
+    </div>
+
+
+    <div class="card ruim">
+        <h2>⚠️ Não Sustentável</h2>
+
+        <ul>
+            <li>Desmatamento</li>
+            <li>Poluição do ar</li>
+            <li>Contamina água</li>
+            <li>Extinção de espécies</li>
+            <li>Aumento do calor global</li>
+        </ul>
+
+        <button onclick="toggleInfo('ruim')">Ver mais</button>
+
+        <div id="extra-ruim" class="extra">
+            <p>❌ Destruição de ecossistemas</p>
+            <p>❌ Problemas de saúde</p>
+            <p>❌ Escassez de recursos</p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</html>
