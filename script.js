@@ -1,3 +1,4 @@
+// A lógica deste projeto foi gerada parcialmente por IA.
 function responder(num) {
 
     const respostas = {
@@ -14,9 +15,8 @@ function responder(num) {
 
     document.getElementById("resposta" + num).innerHTML = respostas[num];
 }
+// A lógica deste projeto foi gerada parcialmente por IA.
 
-
-// MODO ESCURO
 function alternarModo() {
     document.body.classList.toggle("dark");
 
@@ -28,20 +28,16 @@ function alternarModo() {
 }
 
 
-// CARREGAMENTO DA PÁGINA (JUNTEI TUDO EM UM SÓ)
 window.onload = function() {
 
-    // modo escuro salvo
     if (localStorage.getItem("modo") === "escuro") {
         document.body.classList.add("dark");
     }
 
-    // animação de entrada
     document.body.classList.add("loaded");
 }
 
 
-// MOSTRAR / ESCONDER INFO
 function toggleInfo(tipo) {
     let elemento = document.getElementById("extra-" + tipo);
 
