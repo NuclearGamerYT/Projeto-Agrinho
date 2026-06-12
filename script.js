@@ -1,36 +1,22 @@
 function responder(num) {
 
-    if (num === 1) {
-        document.getElementById("resposta1").innerHTML = 
-        "A agricultura sustentável é uma forma de produzir alimentos respeitando o meio ambiente, utilizando os recursos naturais de forma consciente e garantindo que as futuras gerações também possam produzir."
-    }
+    const respostas = {
+        1: "A agricultura sustentável é uma forma de produzir alimentos respeitando o meio ambiente, utilizando os recursos naturais de forma consciente e garantindo que as futuras gerações também possam produzir.",
 
-    if (num === 2) {
-        document.getElementById("resposta2").innerHTML = 
-        "A economia de água evita o desperdício de um recurso essencial para a vida. Além disso, ajuda a manter rios e reservas naturais, garantindo água suficiente para pessoas, animais e plantações."
-    }
+        2: "A economia de água evita o desperdício de um recurso essencial para a vida. Além disso, ajuda a manter rios e reservas naturais, garantindo água suficiente para pessoas, animais e plantações.",
 
-    if (num === 3) {
-        document.getElementById("resposta3").innerHTML =
-        "A rotação de culturas é a prática de alternar os tipos de plantio no mesmo solo. Isso ajuda a manter a fertilidade da terra, reduzir pragas e evitar o desgaste do solo."
-    }
+        3: "A rotação de culturas é a prática de alternar os tipos de plantio no mesmo solo. Isso ajuda a manter a fertilidade da terra, reduzir pragas e evitar o desgaste do solo.",
 
-     if (num === 4) {
-        document.getElementById("resposta4").innerHTML =
-        "Práticas não sustentáveis causam poluição, desmatamento e prejudicam o solo e a água. Também podem afetar a saúde humana e contribuir para o aquecimento global."
+        4: "Práticas não sustentáveis causam poluição, desmatamento e prejudicam o solo e a água. Também podem afetar a saúde humana e contribuir para o aquecimento global.",
 
-     }
+        5: "A agricultura pode ajudar o meio ambiente usando técnicas como o plantio sustentável, preservação de áreas naturais e redução do uso de produtos químicos, protegendo a natureza e os recursos naturais."
+    };
 
-    if (num === 5) {
-        document.getElementById("resposta5").innerHTML =
-        "A agricultura pode ajudar o meio ambiente usando técnicas como o plantio sustentável, preservação de áreas naturais e redução do uso de produtos químicos, protegendo a natureza e os recursos naturais."
-     }
+    document.getElementById("resposta" + num).innerHTML = respostas[num];
 }
 
-function alternarModo() {
-    document.body.classList.toggle("dark");
-}
 
+// MODO ESCURO
 function alternarModo() {
     document.body.classList.toggle("dark");
 
@@ -41,23 +27,49 @@ function alternarModo() {
     }
 }
 
+
+// CARREGAMENTO DA PÁGINA (JUNTEI TUDO EM UM SÓ)
 window.onload = function() {
+
+    // modo escuro salvo
     if (localStorage.getItem("modo") === "escuro") {
         document.body.classList.add("dark");
     }
-}
 
-window.onload = function() {
+    // animação de entrada
     document.body.classList.add("loaded");
 }
 
+
+// MOSTRAR / ESCONDER INFO
 function toggleInfo(tipo) {
     let elemento = document.getElementById("extra-" + tipo);
 
-    if (elemento.style.display === "block") {
-        elemento.style.display = "none";
+    elemento.style.display =
+        (elemento.style.display === "block") ? "none" : "block";
+}
+
+function alternarModo() {
+    document.body.classList.toggle("dark");
+
+    const botao = document.getElementById("modo-btn");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("modo", "escuro");
+        botao.innerHTML = "☀️";
     } else {
-        elemento.style.display = "block";
+        localStorage.setItem("modo", "claro");
+        botao.innerHTML = "🌙";
     }
 }
 
+window.onload = function() {
+    const botao = document.getElementById("modo-btn");
+
+    if (localStorage.getItem("modo") === "escuro") {
+        document.body.classList.add("dark");
+        botao.innerHTML = "☀️";
+    }
+
+    document.body.classList.add("loaded");
+}
